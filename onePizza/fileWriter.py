@@ -7,3 +7,7 @@ def fileWriter(res):
         for i in range(len(res)):
             f.write(" ")
             f.write(res[i])
+            
+            
+            
+            
