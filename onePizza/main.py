@@ -12,7 +12,7 @@ def optimize(like, dislike):
     for key in like.keys():
         if key not in dislike:
             res.append(key)
-        elif key in dislike and like[key] > dislike[key]:
+        elif key in dislike and like[key] >= dislike[key]:
             res.append(key)
 
     return res
