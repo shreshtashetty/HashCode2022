@@ -20,7 +20,7 @@ def optimizeNew(clients):
             if flag == 0:
                 ingredients += clients[i][1]
 
-    return ingredients
+    return list(set(ingredients))
 
 def optimizeGreedy(like, dislike):
     res = []
@@ -38,10 +38,11 @@ if __name__ == '__main__':
     PATH = sys.argv[1]  # To accept user input from cmd line
     # like, dislike = countLikeDislikeOccur(PATH)
     clients = organizeInput(PATH)
-    print(clients, "\n")
-    print(sorted(clients))
+    # print(clients, "\n")
+    # print(sorted(clients))
     res = optimizeNew(sorted(clients))
     # res = optimizeGreedy(like, dislike)
+    print(res)
     score = scoreCalc(res, PATH)
     print(score)
-    # fileWriter(res)
+    fileWriter(res)
